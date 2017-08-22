@@ -4,7 +4,11 @@ const token = require('./token');
 
 const Telegram = require('telegram-node-bot'),
 	tg = new Telegram.Telegram(token, {
-		workers: 1 //controllare numero
+		workers: 1, //controllare numero,
+		webAdmin: {
+			port: 7776,
+			host: 'localhost'
+	}
 	});
 
 // per comandi non riconosciuti/implementati
