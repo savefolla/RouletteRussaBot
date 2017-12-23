@@ -20,4 +20,5 @@ const PlayController = require('./controllers/playController');
 // routing
 tg.router
 	.when(new Telegram.TextCommand('/play','play'), new PlayController())
+    .when(new Telegram.RegexpCommand(/.+@CarloCingolatoBot/g, 'carlo'), new PlayController())
 	.otherwise(new OtherwiseController());
